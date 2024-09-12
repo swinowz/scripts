@@ -10,7 +10,7 @@ ciphertext = bytearray(decoded_cookie[8:]) # Recup le reste
 current_char = ord(input("Enter the current letter you wan't to change ( ex : 'b' for user 'bdmin' ). Only works for the first letter !\n"))
 target_char = ord(input("Enter the letter you want after the tampering ( ex 'a' to turn bdmin to admin )\n"))
 
-iv[0] ^= current_char ^ target_char
+iv[0] ^= current_char ^ target_char # Modification du premier octet de l'IV pour changer 'b' en 'a'
 
 modified_cookie = bytes(iv) + bytes(ciphertext)
 modified_cookie_b64 = base64.b64encode(modified_cookie).decode()
