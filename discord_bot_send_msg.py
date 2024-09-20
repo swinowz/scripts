@@ -44,7 +44,7 @@ async def on_ready():
         guild = channel.guild
         role = discord.utils.get(guild.roles, name="reminder")
         if role:
-            await channel.send(f'Test {role.mention}!')
+            await channel.send(f'test {role.mention}')
         else:
             print('Role named "reminder" not found')
     else:
