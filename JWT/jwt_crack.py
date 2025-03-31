@@ -2,7 +2,7 @@ import jwt
 import sys
 
 def crack_jwt(token, wordlist):
-    with open(wordlist, 'r') as file:
+    with open(wordlist, 'r', encoding='latin-1') as file:
         for line in file:
             secret = line.strip()
             try:
