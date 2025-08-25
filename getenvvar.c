@@ -24,7 +24,12 @@ int main(int argc, char *argv[]) {
     uintptr_t addr = (uintptr_t)ptr;
     printf("%s will be at %p\n", argv[1], (void*)addr);
     printf("Canonical 64-bit form: 0x%016lx\n", addr);
+    printf("Little endian form : ");
+    unsigned char *p = (unsigned char *)&addr;
+    for (size_t i = 0; i < sizeof(addr); i++) {
+        printf("\\x%02x", p[i]);
+    }
+    printf("\n");
 
     return 0;
 }
-
